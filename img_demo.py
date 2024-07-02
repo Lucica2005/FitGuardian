@@ -2,10 +2,11 @@ from matplotlib import pyplot as plt
 from gluoncv import model_zoo, data, utils
 from gluoncv.data.transforms.pose import detector_to_simple_pose, heatmap_to_coord
 from mxnet import gluon, nd
+import numpy as np
 
-im_fname = "data/000000050380.jpg"
-model_json = 'model/Ultralight-Nano-SimplePose.json'
-model_params = "model/Ultralight-Nano-SimplePose.params"
+im_fname = "C:\\Users\\xusir\\Desktop\\college\\github\\Ultralight-SimplePose\\Ultralight-SimplePose\\data\\14.jpg"
+model_json = 'C:\\Users\\xusir\\Desktop\\college\\github\\Ultralight-SimplePose\\Ultralight-SimplePose\\model\\Ultralight-Nano-SimplePose.json'
+model_params = "C:\\Users\\xusir\\Desktop\\college\\github\\Ultralight-SimplePose\\Ultralight-SimplePose\\model\\Ultralight-Nano-SimplePose.params"
 
 detector = model_zoo.get_model('yolo3_mobilenet1.0_coco', pretrained=True)
 pose_net = gluon.SymbolBlock.imports(model_json,['data'],model_params)
